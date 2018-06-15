@@ -1,0 +1,55 @@
+@import './../../base/base';
+
+.vehicle-view-wrapper {
+  margin: 10% 0;
+
+  .vehicle-view-message {
+    width: 100%;
+    font-weight: 600;
+    font-style: italic;
+    top: 20px;
+    position: absolute;
+    text-align: center;
+    padding: 10px 20px;
+  }
+
+  .vehicle-view-left {
+    width: 40%;
+    left: 5%;
+    position: absolute;
+
+    .google-maps {
+      position: absolute;
+      width: 100%;
+      height: 500px;
+      z-index: 100000;
+    }
+  }
+
+  .vehicle-view-right {
+    text-align: center;
+    width: 40%;
+    position: absolute;
+    right: 5%;
+
+    .vehicle-view-header {
+      margin-bottom: 30px;
+      font-size: 48px;
+      width: 100%;
+    }
+    .request-button-wrapper {
+      width: 100%;
+      font-weight: 600;
+      text-align: center;
+
+      .request-button-prompt {
+        width: 100%;
+        font-size: 16px;
+      }
+
+      .request-button {
+        margin: 5px 40px 30px 40px;
+      }
+    }
+  }
+}

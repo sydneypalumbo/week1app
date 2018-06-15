@@ -2,8 +2,9 @@
 
 .home-wrapper {
   position: absolute;
+  width: 100%;
   text-align: center;
-  margin: 2% 15%;
+  margin: 2% 0;
 
   .home-header {
     width: 100%;
@@ -16,7 +17,9 @@
   }
 
   .home-vehicles {
-    width: 100%;
+    max-width: 100%;
+    position: relative;
+    padding: 0 100px;
     margin: 5% 0;
 
   }
