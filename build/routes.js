@@ -143,6 +143,7 @@ routes.get('/request', (req, res, next)=> {
                 });
             break;
         default:
+            console.log(type)
             throw 'Not an valid type of request'
     }
 
