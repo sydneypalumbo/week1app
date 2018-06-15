@@ -1,43 +1,28 @@
 import React from 'react'
-import axios from 'axios'
-
-const STATIC_TEXT = {
-    locate: 'LOCATE'
-}
+import './vehicle-card.scss'
 
 export default class VehicleCard extends React.Component{
 
     constructor(props){
         super(props)
 
-        this.locate = this.locate.bind(this)
+        this.viewVehicle = this.viewVehicle.bind(this)
     }
 
-    componentDidMount() {
-        this.locate()
-    }
-
-    locate() {
-        this.makeVehicleRequest(STATIC_TEXT.locate)
-    }
-
-    makeVehicleRequest(type) {
-        axios.get('/request', {params: {
-                type: type,
-                id: this.props.vehicle.id
-            }})
-            .then((res)=>{
-                console.log(res.data)
-            })
+    viewVehicle() {
+        this.props.history.push({pathname: '/vehicle-view', state:{vehicle:this.props.vehicle}})
     }
 
     render() {
         const {year, make, model} = this.props.vehicle
         return(
-            <div>
-                {year}
-                {make}
-                {model}
+            <div className="vehicle-card-wrapper">
+                    <div onClick={this.viewVehicle} className="vehicle-card">
+                        <img className="vehicle-card-background" src="https://cdn.onlinewebfonts.com/svg/img_553938.png"/>
+                        <div className="vehicle-card-info">
+                            {year} {make} {model}
+                        </div>
+                    </div>
             </div>
         )
     }

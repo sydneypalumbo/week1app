@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { actionCreators } from './../../redux/actions'
 import Home from './../home'
+import { withRouter } from 'react-router-dom'
 
 const mapStatesToProps = function (state) {
     return {
@@ -30,4 +31,4 @@ class HomeContainer extends React.Component{
     }
 }
 
-export default connect(mapStatesToProps, mapDispatchToProps)(HomeContainer)
+export default withRouter(connect(mapStatesToProps, mapDispatchToProps)(HomeContainer))

@@ -32,13 +32,13 @@ routes.get('/authUrl', (req, res, next)=>{
     else {
         res.json(client.getAuthUrl())
     }
-})
+});
 
 routes.get('/callback', (req, res, next)=>{
     CODE = req.query ? req.query.code : null
     NEW = true
     res.redirect('/home')
-})
+});
 
 routes.get('/vehicles', (req, res, next)=>{
     if (CODE && NEW) {
@@ -47,7 +47,7 @@ routes.get('/vehicles', (req, res, next)=>{
     else {
         throw 'No code yet'
     }
-})
+});
 
 routes.get('/access', (req, res, next)=>{
     client.exchangeCode(CODE)
@@ -60,7 +60,7 @@ routes.get('/access', (req, res, next)=>{
                 throw "Failed to obtain access token"
             }
         })
-})
+});
 
 routes.get('/newInfo', (req, res, next)=>{
     smartcar.getVehicleIds(ACCESS_TOKEN)
@@ -70,7 +70,7 @@ routes.get('/newInfo', (req, res, next)=>{
                 const vehicle = new smartcar.Vehicle(vehicleId, ACCESS_TOKEN)
                 VEHICLES.push({id: vehicleId, vehicle: vehicle})
                 return vehicle.info()
-            })
+            });
             Promise.all(vehiclePromises)
                 .then((vehicles)=> {
                     NEW = false
@@ -81,13 +81,13 @@ routes.get('/newInfo', (req, res, next)=>{
 
         )
 
-})
+});
 
 
 routes.get('/request', (req, res, next)=> {
     const {type, id} = req.query
     const vehicleObject = VEHICLES.find(vehicle => vehicle.id === id)
-    let vehicle
+    let vehicle;
     if (vehicleObject) {
         vehicle = vehicleObject.vehicle
     }
@@ -103,8 +103,8 @@ routes.get('/request', (req, res, next)=> {
                 })
                 .catch((err)=>{
                     throw 'Could not retrieve vehicle info'
-                })
-            break
+                });
+            break;
         case 'LOCATE':
             vehicle.location()
                 .then((response)=>{
@@ -113,8 +113,8 @@ routes.get('/request', (req, res, next)=> {
                 .catch((err)=>{
                     console.log(err)
                     throw 'Could not retrieve vehicle location'
-                })
-            break
+                });
+            break;
         case 'LOCK':
             vehicle.lock()
                 .then((response)=>{
@@ -122,8 +122,8 @@ routes.get('/request', (req, res, next)=> {
                 })
                 .catch((err)=>{
                     throw 'Failed lock request'
-                })
-            break
+                });
+            break;
         case 'UNLOCK':
             vehicle.unlock()
                 .then((response)=>{
@@ -131,8 +131,8 @@ routes.get('/request', (req, res, next)=> {
                 })
                 .catch((err)=>{
                     throw 'Failed unlock request'
-                })
-            break
+                });
+            break;
         case 'ODOMETER':
             vehicle.odometer()
                 .then((response)=>{
@@ -140,12 +140,12 @@ routes.get('/request', (req, res, next)=> {
                 })
                 .catch((err)=>{
                     throw 'Could not retrieve vehicle odometer reading'
-                })
-            break
+                });
+            break;
         default:
             throw 'Not an valid type of request'
     }
 
-})
+});
 
 module.exports = routes

@@ -16,10 +16,10 @@ render(
         <PersistGate loading={null} persistor={Store.persistor}>
             <Router>
                 <Switch>
-                    <Route exact path="/" component={Login}/>
+                    <Route exact path="/" component={HomeNoVehiclesContainer}/>
+                    <Route path="/login" component={Login}/>
                     <Route path="/home" component={HomeContainer}/>
-                    <Route path="/homeNoVehicles" component={HomeNoVehiclesContainer}/>
-                    <Route path="/vehicleView" component={VehicleViewContainer}/>
+                    <Route path="/vehicle-view" component={VehicleViewContainer}/>
                 </Switch>
             </Router>
         </PersistGate>

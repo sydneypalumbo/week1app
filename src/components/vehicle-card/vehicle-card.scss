@@ -1,0 +1,26 @@
+@import './../../base/base';
+
+.vehicle-card-wrapper {
+  width: 50%;
+  position: relative;
+  display: inline-block;
+
+  .vehicle-card {
+
+    .vehicle-card-background {
+      width: 250px;
+      opacity: 0.7;
+      &:hover {
+        cursor: pointer;
+        opacity: 1;
+      }
+    }
+
+    .vehicle-card-info {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%
+    }
+  }
+}

@@ -22,7 +22,7 @@ export default class Home extends React.Component{
     buildVehicleCards() {
         return this.props.vehicles.map((vehicle) => {
             return(
-                <VehicleCard vehicle={vehicle}/>
+                <VehicleCard history={this.props.history} vehicle={vehicle}/>
             )
         })
     }
@@ -31,13 +31,20 @@ export default class Home extends React.Component{
 
         return(
             <div>
-                Hello
-                <a href={this.props.authUrl}>
-                    <button/>
-                </a>
-                {
-                    this.props.vehicles && this.props.vehicles.length > 0 && this.buildVehicleCards()
-                }
+                <img src="https://sbi.insure/wp-content/uploads/2017/10/Teenager-Driving.jpg" className="background"/>
+                <div className="home-wrapper">
+                    <div className="home-header">Family Vehicles</div>
+                    <div className="home-subheader">Select a vehicle to interact with or add new vehicles below!</div>
+                    {
+                        this.props.vehicles && this.props.vehicles.length > 0 &&
+                        <div className="home-vehicles">
+                            {this.buildVehicleCards()}
+                        </div>
+                    }
+                    <a href={this.props.authUrl}>
+                        <button className="button">Add More Vehicles!</button>
+                    </a>
+                </div>
             </div>
         )
     }

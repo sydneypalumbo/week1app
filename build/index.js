@@ -29,4 +29,4 @@ app.listen(process.env.PORT, function() {
     console.log('listening on port', PORT);
 });
 
-module.exports = app
+module.exports = app;

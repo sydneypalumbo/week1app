@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { actionCreators } from './../../redux/actions'
-import VehicleView from "../vehicle-view";
+import VehicleView from '../vehicle-view'
+import { withRouter } from 'react-router-dom'
 
 const mapStatesToProps = function (state) {
     return {
@@ -30,4 +31,4 @@ class VehicleViewContainer extends React.Component{
     }
 }
 
-export default connect(mapStatesToProps, mapDispatchToProps)(VehicleViewContainer)
+export default withRouter(connect(mapStatesToProps, mapDispatchToProps)(VehicleViewContainer))

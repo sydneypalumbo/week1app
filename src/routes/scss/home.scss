@@ -1,1 +1,23 @@
 @import './../../base/base';
+
+.home-wrapper {
+  position: absolute;
+  text-align: center;
+  margin: 2% 15%;
+
+  .home-header {
+    width: 100%;
+    font-size: 48px;
+  }
+
+  .home-subheader {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .home-vehicles {
+    width: 100%;
+    margin: 5% 0;
+
+  }
+}

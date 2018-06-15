@@ -11,7 +11,7 @@ export default class Login extends React.Component{
 
     login() {
         this.props.history.push({
-            pathname: '/homeNoVehicles'
+            pathname: '/'
         })
     }
 

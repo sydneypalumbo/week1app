@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { actionCreators } from './../../redux/actions'
 import HomeNoVehicles from './../home-no-vehicles'
+import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = function (state) {
     return {
@@ -30,4 +31,4 @@ class HomeNoVehiclesContainer extends React.Component{
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeNoVehiclesContainer)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeNoVehiclesContainer))
