@@ -1,0 +1,40 @@
+{
+  "name": "Week1App",
+  "version": "0.0.0",
+  "description": "Managing Your Young Driver",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -d",
+    "start": "node 'build/index.js'"
+  },
+  "keywords": [],
+  "author": "sydneypalumbo",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "css-loader": "^0.28.7",
+    "express": "^4.16.2",
+    "json-loader": "^0.5.7",
+    "node-sass": "^4.9.0",
+    "path": "^0.12.7",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^3.2.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^3.7.2",
+    "redux-persist": "^5.10.0",
+    "sass-loader": "^6.0.6",
+    "smartcar": "^3.0.1",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "^2.9.4"
+  }
+}
