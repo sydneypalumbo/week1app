@@ -10,6 +10,7 @@
   "keywords": [],
   "author": "sydneypalumbo",
   "dependencies": {
+    "auth0-js": "^9.6.1",
     "axios": "^0.18.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.2",
@@ -22,6 +23,7 @@
     "css-loader": "^0.28.7",
     "express": "^4.16.2",
     "json-loader": "^0.5.7",
+    "jwt-decode": "^2.2.0",
     "node-sass": "^4.9.0",
     "path": "^0.12.7",
     "react": "^16.4.0",
